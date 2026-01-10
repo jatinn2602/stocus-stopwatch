@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Changa+One:ital@0;1&display=swap');
+body{
+    background:#edeaff;
+    font-family: 'Poppins','sans-serif';
+    width: 100vw;
+    height: 76vh;
+    background-color: black;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/background.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    overflow: hidden;
+}
+.black-screen {
+  background: black !important;
+  background-image: none !important;
+}
+
+
+.stopwatch{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.stopwatch h1{
+    margin-top: 0px;
+    font-family: "Anton", sans-serif; 
+    font-size: 194px;
+    font-weight: 300;
+}
+
+.buttons{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.buttons p{
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: black;
+    font-weight: 800;
+    font-size: 30px;
+    border: 5px solid white;
+}
+
+.black{
+    cursor: pointer;
+    font-weight: 700;
+    text-shadow: 0 0 10px black;
+}
+
+.buttons p:nth-child(1){
+    color: white;
+    cursor: pointer;
+    background-color: #D25353;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: solid #D25353;
+}
+
+.buttons p:hover{
+    font-weight: 800;
+    color: white;
+    background-color: transparent;
+    border: 5px solid white;
+    font-weight: 800;
+}
+
+.footer img{
+    filter: invert(0.5);
+    width: 50px;
+    margin: 0 0px;
+    cursor: pointer;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    justify-content: space-between;
+}
+
+.navbar h1{
+    color: #f4f9ce;
+    font-size: 44px;
+    cursor: pointer;
+}
+
+.navbar img{
+    filter: invert(0.5);
+    width: 50px;
+    cursor: pointer;
+}
+.navbar img:hover{
+    filter: invert(1);
+    color: white;
+}
+.footer img:hover{
+    filter: invert(1);
+    color: white;
+}
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0px;
+    padding: 0 50px;
+}
+
+.footer p{
+    color: white;
+    cursor: pointer;
+    background-color: #D25353;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: solid #D25353;
+}
+
+.footer p:hover{
+    padding: 10px 15px;
+    background-color: transparent;
+    border: solid #D25353;
+}
+
