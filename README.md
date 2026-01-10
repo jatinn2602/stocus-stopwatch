@@ -12,7 +12,7 @@ Whether you’re studying, working, or practicing deep focus, **Stocus** adapts 
 
 > A glimpse of Stocus in action — clean UI, immersive backgrounds, and a distraction-free black screen mode.
 
-![Stocus Main Screen](images/full-size.png)
+![Stocus Main Screen](images/landing-page.png)
 ![Stocus Wallpaper Selector](images/wallpaper-option.png)
 
 ---
