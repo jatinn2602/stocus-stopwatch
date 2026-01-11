@@ -16,9 +16,9 @@
   overflow-y: auto;
   text-align: center;
   background-color: #ff006a51;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
   margin: 90px;
   border-radius: 20px;
+  z-index: 1;
   padding: 0 30px;
 }
 
