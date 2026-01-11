@@ -6,7 +6,7 @@ It combines **simplicity**, **aesthetic design**, and **useful customizations** 
 
 Whether you’re studying, working, or practicing deep focus, **Stocus** adapts to your environment.
 
-Check out the live preview:<a href="https://stocus.netlify.app"><p>Link</p></a>
+Check out the live preview:[Link](https://stocus.netlify.app)
 
 ---
 
