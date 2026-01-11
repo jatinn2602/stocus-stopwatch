@@ -1,4 +1,4 @@
-.dialog{
+.dialog {
   text-align: center;
   position: absolute;
   z-index: 1;
@@ -7,7 +7,7 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8))
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
 }
 
 .container {
@@ -22,30 +22,27 @@
   padding: 0 30px;
 }
 
-.title{
+.title {
   gap: 260px;
   display: flex;
   justify-content: end;
   align-items: center;
-  
 }
-.title h1{
+.title h1 {
   color: white;
   display: inline;
 }
 
-.title button{
+.title button {
   background-color: transparent;
   border: transparent;
   cursor: pointer;
 }
 
-.title button img{
+.title button img {
   width: 30px;
   height: 30px;
 }
-
-
 
 .wallpapers {
   display: grid;
@@ -59,14 +56,22 @@
   border-radius: 25px;
 }
 
+
 .box img {
   margin: 20px;
-  border: 3px solid #afb977;
   width: 170px;
   height: 100px;
   cursor: pointer;
   border-radius: 10px;
-  background-size: cover;
+  background-size: contain;
+}
+
+/* applied wallpaper */
+.image.active {
+  border: 2px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);          
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  transform: scale(1.05);
 }
 
 /* Scroll Bar */

@@ -6,7 +6,8 @@ body{
     width: 100vw;
     height: 76vh;
     background-color: black;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/background.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/wallpapers/0.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     z-index: 0;
@@ -15,6 +16,8 @@ body{
     box-sizing:border-box;
     overflow: hidden;
 }
+
+
 .black-screen {
   background: black !important;
   background-image: none !important;
@@ -36,6 +39,8 @@ body{
     font-family: "Anton", sans-serif; 
     font-size: 194px;
     font-weight: 300;
+    text-shadow: 0 0 10px black;
+
 }
 
 .buttons{
@@ -55,6 +60,7 @@ body{
     font-weight: 800;
     font-size: 30px;
     border: 5px solid white;
+    box-shadow: 0 0 10px black;
 }
 
 .black{
@@ -90,7 +96,6 @@ body{
     display: flex;
     align-items: center;
     padding: 0 100px;
-    justify-content: space-between;
 }
 
 .navbar h1{
@@ -108,10 +113,6 @@ body{
     filter: invert(1);
     color: white;
 }
-.footer img:hover{
-    filter: invert(1);
-    color: white;
-}
 
 
 .footer{
@@ -121,8 +122,17 @@ body{
     bottom: 0px;
     padding: 0 50px;
 }
+.button{
+    display: flex;
+    gap: 20px;
+}
 
-.footer p{
+.footer img:hover{
+    filter: invert(1);
+    color: white;
+}
+
+.wallpaperBtn{
     color: white;
     cursor: pointer;
     background-color: #D25353;
@@ -130,8 +140,26 @@ body{
     border-radius: 15px;
     border: solid #D25353;
 }
+.add-wallpaper{
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: white;
+    border: solid white;
+    border-radius: 15px;
+    padding: 10px 15px;
+}
+.add-wallpaper:hover{
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: transparent;
+    border: solid white;
+    border-radius: 15px;
+    padding: 10px 15px;
+}
 
-.footer p:hover{
+.wallpaperBtn:hover{
     padding: 10px 15px;
     background-color: transparent;
     border: solid #D25353;

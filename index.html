@@ -1,7 +1,8 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="images/stopwatch.ico">
+    <link rel="icon" href="images/stocus.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stocus-A Aesthetic & Customizable Stopwatch</title>
     <link rel="stylesheet" href="style.css">
@@ -16,12 +17,13 @@
                 <h1>Choose Your Wallpaper</h1>
                 <button><img class="closeBtn" src="images/close.png" alt=""></button>
             </div>
-            <div class="wallpapers"></div>
+            <div class="wallpapers">
+            </div>
         </div>
     </div>
     <div class="header">
         <div class="navbar">
-            <h1>Stocus</h1>
+            <h1 class="heading" onclick="titleName()">Stocus</h1>
         </div>
     </div>
     <div class="stopwatch">
@@ -31,10 +33,15 @@
             <p onclick="switchButton()" class="play">Start</p>
             <p onclick="watchReset()">Reset</p>
         </div>
-        <p class="black" onclick="blackScreenToggle()">Switch to Black Screen</p>
+        <p class="black" onclick="">Switch to Black Screen</p>
     </div>
     <div class="footer">
-        <p class="wallpaperBtn">Choose Your Wallpaper</p>
+        <div class="button">
+            <p class="wallpaperBtn">Choose Your Wallpaper</p>
+            <p class="add-wallpaper">Custom wallpaper</p>
+        </div>
+        <input type="file" id="customWallpaperInput" accept="image/*" hidden>
+
         <img src="images/full-size.png" alt="" class="fullScreen">
     </div>
     <script src="script.js"></script>

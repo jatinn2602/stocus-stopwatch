@@ -1,15 +1,6 @@
+//timer
 let [seconds, minutes, hours] = [0, 0, 0];
 let displayTime = document.getElementById("displayTime");
-let timer = null;
-const switchBtn = document.querySelector(".play");
-let number = 0;
-let num = 0;
-const fullscreenBtn = document.querySelector(".fullScreen");
-const wallpapersBtn = document.querySelector(".wallpaperBtn");
-const wallpaperDialog = document.querySelector(".dialog");
-const closeBtn = document.querySelector(".closeBtn");
-
-//timer
 function stopwatch() {
   seconds++;
   if (seconds == 60) {
@@ -20,7 +11,7 @@ function stopwatch() {
       hours++;
     }
   }
-
+  
   let h = hours < 10 ? "0" + hours : hours;
   let m = minutes < 10 ? "0" + minutes : minutes;
   let s = seconds < 10 ? "0" + seconds : seconds;
@@ -28,6 +19,9 @@ function stopwatch() {
 }
 
 // resets the ongoing timer
+let timer = null;
+const switchBtn = document.querySelector(".play");
+let number = 0;
 function watchReset() {
   clearInterval(timer);
   [seconds, minutes, hours] = [0, 0, 0];
@@ -59,6 +53,7 @@ function switchButton() {
 
 //fullscreen click event
 let isFullscreen = false;
+const fullscreenBtn = document.querySelector(".fullScreen");
 
 fullscreenBtn.addEventListener("click", () => {
   if (!document.fullscreenElement) {
@@ -85,6 +80,9 @@ document.addEventListener("fullscreenchange", () => {
 });
 
 //wallpaper dialog box toggle
+const wallpapersBtn = document.querySelector(".wallpaperBtn");
+const wallpaperDialog = document.querySelector(".dialog");
+const closeBtn = document.querySelector(".closeBtn");
 wallpapersBtn.addEventListener("click", () => {
   wallpaperDialog.style.display = "flex";
 });
@@ -92,59 +90,121 @@ closeBtn.addEventListener("click", () => {
   wallpaperDialog.style.display = "none";
 });
 
-//wallpaper selection
+//wallpaper objects
 
 const wallpaperImages = [
-  "https://i.pinimg.com/736x/67/07/17/670717930e42e77b96933f157ab3aa29.jpg",
-  "https://i.pinimg.com/736x/bc/44/8b/bc448b2c1a788e86f1dc71413e24b883.jpg",
-  "https://i.pinimg.com/1200x/de/d5/3f/ded53f0f51047a7686808d3eb4b4e143.jpg",
-  "https://i.pinimg.com/736x/83/dd/29/83dd2961a32eec253eb6af37344a12f2.jpg",
-  "https://i.pinimg.com/736x/1f/d7/30/1fd730eccc287715036ead0d3531694e.jpg",
-  "https://i.pinimg.com/1200x/59/61/38/596138beb239ada8aab67dbb4e288be7.jpg",
-  "https://i.pinimg.com/736x/7b/13/c7/7b13c7e4e3fe802f452e64959f29d4f3.jpg",
-  "https://i.pinimg.com/1200x/2b/d6/c5/2bd6c56fc6519514ada6add14d821fcb.jpg",
-  "https://i.pinimg.com/1200x/13/c8/ac/13c8ac48ee7f486faf6aadd437b2d069.jpg",
+  "images/wallpapers/1.jpg",
+  "images/wallpapers/2.jpg",
+  "images/wallpapers/3.png",
+  "images/wallpapers/4.jpg",
+  "images/wallpapers/5.png",
+  "images/wallpapers/6.jpg",
+  "images/wallpapers/7.jpg",
+  "images/wallpapers/8.jpg",
+  "images/wallpapers/9.jpg",
+  "images/wallpapers/10.jpg",
 ];
 
+//wallpaper insertion
 const container = document.querySelector(".wallpapers");
 
 wallpaperImages.forEach((src) => {
   const box = document.createElement("div");
   box.className = "box";
-
+  
   const img = document.createElement("img");
   img.className = "image";
   img.src = src;
-
+  
   box.appendChild(img);
   container.appendChild(box);
 });
 
-container.addEventListener("click", (e) => {
-  if (e.target.tagName === "IMG") {
-    document.body.style.backgroundImage = `url(${e.target.src})`;
+//function for sync applied wallpapaer
+
+const images = document.querySelectorAll(".image");
+function syncActiveWallpaper(currentWallpaper) {
+  images.forEach(img => {
+    if (img.src === currentWallpaper) {
+      img.classList.add("active");
+    } else {
+      img.classList.remove("active");
+    }
+  });
+}
+
+//apply seleceted wallpaper
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    const wallpaper = img.src;
+
+    document.body.style.backgroundImage = `url(${wallpaper})`;
+    syncActiveWallpaper(wallpaper);
     wallpaperDialog.style.display = "none";
-  }
-});
+    document.body.classList.remove("black-screen");
+    black.innerHTML= "Switch to Black Screen";
+})});
+
+
+
 
 //black screen toggle
 const black = document.querySelector(".black");
-// function blackScreenToggle() {
-//   black.addEventListener("click", () => {
-//   if (number === 0) {
-//       document.body.style.backgroundImage = "none";
-//       black.innerHTML = "Switch Back";
-//       number = 1;
-//     }
-//     else if (number===1) {
-//       document.body.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/background.jpg)`;
-//       black.innerHTML = "Switch to Black Screen";
-//       number =0;
-//     }
-// })}
-
 black.addEventListener("click", () => {
   const isBlack = document.body.classList.toggle("black-screen");
-
+  
   black.innerHTML = isBlack ? "Switch Back" : "Switch to Black Screen";
+  clearActiveWallpapers();
 });
+
+//function to remove active wallpaper border
+function clearActiveWallpapers() {
+  document.querySelectorAll(".image")
+    .forEach(img => img.classList.remove("active"));
+}
+
+
+//Stocus click refresh page
+const heading=document.querySelector(".heading")
+heading.addEventListener("click",(e)=>{
+  window.location.reload();
+  console.log(e.target)
+})
+
+//custom wallpaper input
+const addWallpaperBtn = document.querySelector(".add-wallpaper");
+const fileInput = document.getElementById("customWallpaperInput");
+
+addWallpaperBtn.addEventListener("click", () => {
+  fileInput.click(); //opens file dialog
+});
+
+//apply custom wallpaper
+fileInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+
+  if (!file) return;
+
+  // Optional: validate file type
+  if (!file.type.startsWith("image/")) {
+    alert("Please select an image file");
+    return;
+  }
+
+  const imageURL = URL.createObjectURL(file);
+
+  // apply as wallpaper
+  document.body.style.backgroundImage = `url(${imageURL})`;
+
+  // clear active class from preset wallpapers
+  document.querySelectorAll(".image")
+    .forEach(img => img.classList.remove("active"));
+
+});
+
+//hide wallpaper choosing dialog box when we click anywhere on the screem
+const dialog=document.querySelector(".dialog")
+dialog.addEventListener("click",()=>{
+    wallpaperDialog.style.display = "none";
+
+})
