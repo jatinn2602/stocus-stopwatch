@@ -154,7 +154,7 @@ margin: -25px 0px;}
     font-size: 10px;
     gap: 0px;
   }
-  }
+}
 
 
 .wallpaperBtn {
@@ -201,6 +201,7 @@ margin: -25px 0px;}
   .footer img {
     width: 30px;
     gap: 20px;
+}
 }
 .footer img:hover {
   filter: invert(1);
