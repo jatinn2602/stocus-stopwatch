@@ -13,7 +13,7 @@
 .container {
   width: 1000px;
   height: 700px;
-  overflow-y: auto;
+  overflow-y: hidden;
   text-align: center;
   background-color: #ff006a51;
   margin: 90px;
@@ -22,15 +22,36 @@
   padding: 0 30px;
 }
 
+@media (max-width: 800px) {
+  .container {
+    width: 400px;
+    height: 600px;
+  }
+}
+
 .title {
   gap: 260px;
   display: flex;
   justify-content: end;
   align-items: center;
 }
+
+@media (max-width: 800px) {
+  .title {
+    gap: 55px;
+  }
+}
+
+
 .title h1 {
   color: white;
   display: inline;
+}
+
+@media (max-width: 700px) {
+  .title h1 {
+    font-size: 20px;
+  }
 }
 
 .title button {
@@ -41,23 +62,29 @@
 
 .title button img {
   width: 30px;
-  height: 30px;
 }
+
+@media (max-width: 800px) {
+  .title button img {
+    width: 20px;
+  }
+}
+
 
 .wallpapers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
-  margin: auto;
   overflow: scroll;
   overflow-x: hidden;
   height: 85%;
-  width: 90%;
+  width: 100%;
   border-radius: 25px;
 }
 
 
 .box img {
+  /* margin-right: 50px ; */
   margin: 20px;
   width: 170px;
   height: 100px;
@@ -65,6 +92,17 @@
   border-radius: 10px;
   background-size: contain;
 }
+
+
+@media (max-width: 800px) {
+  .box img {
+    margin-right: 60px ;
+    width: 120px;
+    height: 60px
+
+  }
+}
+
 
 /* applied wallpaper */
 .image.active {
@@ -84,6 +122,7 @@
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   border-radius: 12px;
+  gap: 50px;
   -webkit-backdrop-filter: blur(10px);
 }
 
