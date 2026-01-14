@@ -126,16 +126,16 @@ closeBtn.addEventListener("click", (e) => {
 //wallpaper objects
 
 const wallpaperImages = [
-  "images/wallpapers/1.jpg",
-  "images/wallpapers/2.jpg",
-  "images/wallpapers/3.png",
-  "images/wallpapers/4.jpg",
-  "images/wallpapers/5.png",
-  "images/wallpapers/6.jpg",
-  "images/wallpapers/7.jpg",
-  "images/wallpapers/8.jpg",
-  "images/wallpapers/9.jpg",
-  "images/wallpapers/10.jpg",
+  "images/wallpapers/1.webp",
+  "images/wallpapers/2.webp",
+  "images/wallpapers/3.webp",
+  "images/wallpapers/4.webp",
+  "images/wallpapers/5.webp",
+  "images/wallpapers/6.webp",
+  "images/wallpapers/7.webp",
+  "images/wallpapers/8.webp",
+  "images/wallpapers/9.webp",
+  "images/wallpapers/10.webp",
 ];
 
 //wallpaper insertion
